@@ -20,7 +20,7 @@ describe Queue do
     queue = Queue.new
     queue.enqueue('One')
     queue.enqueue('Two')
-    
+
     expect(queue.dequeue).to eq ['Two']
     expect(queue.size).to eq 1
   end
