@@ -26,4 +26,20 @@ describe Stack do
     expect(stack.size).to eq 1
     expect(stack.empty?).to eq false
   end
+
+  it 'allows for iteration' do
+    stack = Stack.new
+    stack.push('One')
+    stack.push('Two')
+    stack.push('Three')
+    stack.push('One')
+
+    actual = []
+    stack.each do |item|
+      actual << item
+    end
+
+    expect(actual).to eq(['One', 'Two', 'Three', 'One'])
+
+  end
 end
