@@ -24,4 +24,20 @@ describe Queue do
     expect(queue.dequeue).to eq ['Two']
     expect(queue.size).to eq 1
   end
+
+  it 'allows for iteration' do
+    queue = Queue.new
+    queue.enqueue('One')
+    queue.enqueue('Two')
+    queue.enqueue('Three')
+    queue.enqueue('One')
+
+    actual = []
+    queue.each do |item|
+      actual << item
+    end
+
+    expect(actual).to eq(['One', 'Two', 'Three', 'One'])
+
+  end
 end

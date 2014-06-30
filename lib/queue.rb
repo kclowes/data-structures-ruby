@@ -20,4 +20,10 @@ class Queue
     @input.shift
     @input
   end
+
+  def each(&block)
+    @input.each do |item|
+      block.call(item)
+    end
+  end
 end
